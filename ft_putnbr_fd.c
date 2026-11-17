@@ -6,7 +6,7 @@
 /*   By: liovine <lucas.iovine@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 11:57:53 by liovine           #+#    #+#             */
-/*   Updated: 2026/11/04 12:19:21 by liovine          ###   ########.fr       */
+/*   Updated: 2026/11/17 12:42:04 by liovine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  *
  * \bref write the string representation of the given integer
  */
-void	ft_putnbr_fd(int n, int fd)
+ssize_t	ft_putnbr_fd(int n, int fd)
 {
 	char	res[11];
 	size_t	pos;
@@ -33,5 +33,5 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (isn)
 		res[--pos] = '-' * isn;
-	write(fd, res + pos, 11 - pos);
+	return (write(fd, res + pos, 11 - pos));
 }

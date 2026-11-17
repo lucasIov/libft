@@ -67,6 +67,19 @@ These functions are used to handle chained list
 - `ft_lstiter`: iterate into a chain calling a callback
 - `ft_lstmap`: create a new chain from another applying a given function at each element
 
+## printf
+This is a partial recreation of the printf function.
+
+It re implements conversion for:
+- '%': print the '%' character
+- 'c': print a character
+- 's': print a string
+- 'd' or 'i': print a integer
+- 'u': print a unsigned integer
+- 'x': print a unsigned integer in hexadecimal
+- 'X': print a unsigned integer in upper case hexadecimal
+- 'p': print a pointer value in stylized way
+
 # Instructions
 To compile this library into a *.a* use the `make` command
 

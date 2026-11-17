@@ -6,7 +6,7 @@
 /*   By: liovine <lucas.iovine@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 11:58:54 by liovine           #+#    #+#             */
-/*   Updated: 2026/11/17 12:11:16 by liovine          ###   ########.fr       */
+/*   Updated: 2026/11/17 12:46:08 by liovine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			**ft_split(char const *s, char c);
 
-void			ft_putchar_fd(char c, int fd);
-void			ft_putendl_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
-void			ft_putstr_fd(char *s, int fd);
+ssize_t			ft_putchar_fd(char c, int fd);
+ssize_t			ft_putendl_fd(char *s, int fd);
+ssize_t			ft_putnbr_fd(int n, int fd);
+ssize_t			ft_putstr_fd(char *s, int fd);
 
 int				ft_atoi(const char *nptr);
 char			*ft_itoa(int n);
@@ -57,6 +57,8 @@ int				ft_isdigit(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+
+int				ft_printf(const char *s, ...);
 
 // ========
 // = LIST =

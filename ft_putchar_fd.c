@@ -6,7 +6,7 @@
 /*   By: liovine <lucas.iovine@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 11:57:47 by liovine           #+#    #+#             */
-/*   Updated: 2026/11/04 16:42:03 by liovine          ###   ########.fr       */
+/*   Updated: 2026/11/17 12:42:19 by liovine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 // 			: [fd]"r"(fd), [ch]"r" (&c)
 // 			: "%rax", "%rdi", "%rsi", "%rdx"
 // 			);
+// 	return (1); // should be done in asm
 // }
 // #endif
 
@@ -36,7 +37,7 @@
  * 
  * \bref Outputs the character 'c' to the given file descriptor
  */
-void	ft_putchar_fd(char c, int fd)
+ssize_t	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	return (write(fd, &c, 1));
 }
