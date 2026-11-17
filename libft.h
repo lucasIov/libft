@@ -6,7 +6,7 @@
 /*   By: liovine <lucas.iovine@learner.42.tech>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 11:58:54 by liovine           #+#    #+#             */
-/*   Updated: 2026/11/17 12:46:08 by liovine          ###   ########.fr       */
+/*   Updated: 2026/11/17 12:59:11 by liovine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,38 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 
 int				ft_printf(const char *s, ...);
+
+// =================
+// = GET NEXT LINE =
+// =================
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 2048
+# endif
+# if BUFFER_SIZE <= 0
+#  error "BUFFER_SIZE **MUST** be a positive integer"
+# endif
+
+# ifndef FD_LIMIT
+#  define FD_LIMIT 100
+# endif
+# if FD_LIMIT <= 0
+#  error "FD_LIMIT **MUST** be a positive integer"
+# endif
+
+typedef struct s_buff
+{
+	ssize_t	l;
+	char	*data;
+}	t_buff;
+
+typedef struct s_bk_buff
+{
+	ssize_t	l;
+	char	data[BUFFER_SIZE];
+}	t_bk_buff;
+
+char			*get_next_line(int fd);
 
 // ========
 // = LIST =
