@@ -80,6 +80,31 @@ It re implements conversion for:
 - 'X': print a unsigned integer in upper case hexadecimal
 - 'p': print a pointer value in stylized way
 
+## get next line
+the get_next_line function is meant to return a buffer
+corresponding to the next line (any non `lf` followed by a `lf` or not).
+Or the last line if EOF is reached
+
+```
+<static buffer>
+  ↑       │
+  │      copy
+  │       │     ┌────── fetch()
+  │       │   append      │
+  │       ↓     ↓         │
+  │  <growing buffer>     │
+  │          ↓            │
+  │       find_lf() ── not finded
+  │          │
+  │        finded
+  │          │
+ rest ─── separate()
+             │
+            line
+             ↓
+           return
+```
+
 # Instructions
 To compile this library into a *.a* use the `make` command
 
